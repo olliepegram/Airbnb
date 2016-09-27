@@ -47,6 +47,12 @@
     <%= f.check_box :pets, class: "form-check-input" %>
   </div>
 
+  <div class="form-group">
+  <%= f.label :picture %>
+  <%= f.file_field :picture, class: "form-control-file" %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit "Create Room", class: "btn btn-primary" %>
   </div>

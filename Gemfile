@@ -12,6 +12,9 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'growlyflash'
 
+gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
+gem 'cloudinary'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets

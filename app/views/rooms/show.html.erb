@@ -45,5 +45,9 @@
   <%= @room.name %>
 </p>
 
+<p>
+    <%= image_tag(@room.picture_url(:thumbnail), :width => "100%") %>
+</p>
+
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>
