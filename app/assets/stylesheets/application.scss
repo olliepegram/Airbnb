@@ -16,4 +16,51 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 @import "growlyflash";
+
+p, h3, h1, h2 {
+  color:#484848 !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.image-show {
+  margin-top: -29px;
+  width:100%;
+  height:700px;
+}
+
+.carousel-inner {
+  height:700px;
+  margin-top: -20px;
+}
+
+.room-section {
+  margin-top:20px;
+  padding-bottom:20px;
+  width:100%;
+}
+
+.fa {
+
+}
+
+.show-content {
+  background-color: #F5F5F5;
+  margin-top: -20px;
+  border-top:1px solid #999;
+}
+
+.show-content-text {
+  margin-left: 20%;
+
+  padding:10px;
+}
+
+#notice {
+  margin-bottom: 0px;
+}
+
+.search-form {
+  max-width:500px;
+}

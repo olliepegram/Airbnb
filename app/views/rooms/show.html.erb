@@ -1,53 +1,138 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @room.description %>
-</p>
+<!-- <p>
+    <%= image_tag(@room.pictures.first.url, :width => "100%", class: "image-show") %>
+</p> -->
 
-<p>
-  <strong>Accommadates:</strong>
-  <%= @room.accommadates %>
-</p>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
 
-<p>
-  <strong>Bathroom:</strong>
-  <%= @room.bathroom %>
-</p>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <!-- <% @room.pictures.each do |j| %>
+        <%= image_tag(@room.pictures) %>
+      <% end %> -->
+      <%= image_tag(@room.pictures.first.url, :width => "100%", class: "image-show") %>
+      <div class="carousel-caption">
 
-<p>
-  <strong>Price:</strong>
-  <%= @room.price %>
-</p>
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag(@room.pictures.second.url, :width => "100%", class: "image-show") %>
+      <div class="carousel-caption">
 
-<p>
-  <strong>Kitchen:</strong>
-  <%= @room.kitchen %>
-</p>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Internet:</strong>
-  <%= @room.internet %>
-</p>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
-<p>
-  <strong>Pets:</strong>
-  <%= @room.pets %>
-</p>
+<div class="panel room-section col-md-offset-2">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <div class="img-responsive">
+                        <a href=""><img alt="User Profile Image" class="img-circle" height="115" width="115" src="/assets/pr.jpg"></a>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <h1 class="text-center-sm"><%= @room.name %></h1>
 
-<p>
-  <strong>User:</strong>
-  <%= @room.user %>
-</p>
+                    <a href="/s/Netherlands">
+                        <span><%= @room.name %></span>
+                    </a>
 
-<p>
-  <strong>Name:</strong>
-  <%= @room.name %>
-</p>
+                </div>
+            </div>
+            <div class="row row-condensed text-center">
+                <div class="col-sm-3">
+                  <i class="fa fa-home fa-3x" aria-hidden="true"></i>
+                </div>
+                <div class="col-sm-3">
+                  <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                </div>
+                <div class="col-sm-3">
+                  <i class="fa fa-taxi fa-3x" aria-hidden="true"></i>
+                </div>
+                <div class="col-sm-3">
+                  <i class="fa fa-bed fa-3x" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 text-muted text-center hide-sm">
+                    <a href="" class="text-wrap"><%= User.find_by(id: @room.user_id).firstname %></a>
+                </div>
+                <div class="col-md-9">
+                    <div class="row row-condensed text-muted text-center">
+                        <div class="col-sm-3">Entire home/apt</div>
+                        <div class="col-sm-3">2 Guests</div>
+                        <div class="col-sm-3">1 Bedroom</div>
+                        <div class="col-sm-3">1 Bed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<p>
-    <%= image_tag(@room.picture_url(:thumbnail), :width => "100%") %>
-</p>
+<div class="show-content">
+  <div class="show-content-text">
+    <h3>About this listing</h3>
+    <p>
+        <strong>Description:</strong>
+        <%= @room.description %>
+    </p>
 
-<%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Back', rooms_path %>
+    <p>
+        <strong>Accommadates:</strong>
+        <%= @room.accommadates %>
+    </p>
+
+    <p>
+        <strong>Bathroom:</strong>
+        <%= @room.bathroom %>
+    </p>
+
+    <p>
+        <strong>Price:</strong>
+        <%= @room.price %>
+    </p>
+
+    <p>
+        <strong>Kitchen:</strong>
+        <%= @room.kitchen %>
+    </p>
+
+    <p>
+        <strong>Internet:</strong>
+        <%= @room.internet %>
+    </p>
+
+    <p>
+        <strong>Pets:</strong>
+        <%= @room.pets %>
+    </p>
+
+
+    <%= link_to 'Edit', edit_room_path(@room) %>
+    |
+    <%= link_to 'Back', rooms_path %>
+
+</div>
+</div>
